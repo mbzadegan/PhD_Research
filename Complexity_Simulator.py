@@ -1,7 +1,6 @@
 import itertools
 import math
 
-
 def proof_complexity_simulation(formula, proof_steps):
     """
     Simulate a naive propositional proof verifier.
