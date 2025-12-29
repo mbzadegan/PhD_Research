@@ -46,8 +46,8 @@ program fibonacci_comparison
     print *, "Dynamic Programming Fibonacci(", n, ") = ", result_dp
     print *, "-------------------------------------------"
     print *
-    print *, "Time (recursive): ", t_recursive, " seconds"
-    print *, "Time (DP):        ", t_dp,        " seconds"
+    print *, "Time (recursive): ", t_recursive, " seconds."
+    print *, "Time (DP):        ", t_dp,        " seconds."
     print *, "-------------------------------------------"
 
 contains
