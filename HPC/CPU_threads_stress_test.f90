@@ -22,7 +22,7 @@ PROGRAM CPUSressTest
   ! Get clock rate (ticks per second)
   CALL SYSTEM_CLOCK(COUNT_RATE=clock_rate)
 
-  PRINT *, "Starting CPU Stress Test..."
+  PRINT *, "Starting parallel CPU Stress Test on all CPU threads ..."
   PRINT *, "Using OpenMP with maximum threads available."
 
   CALL SYSTEM_CLOCK(start_time)
