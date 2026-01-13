@@ -4,8 +4,8 @@
 !        gfortran -fopenmp -fno-range-check -o CPU_threads_stress_test CPU_threads_stress_test.f90
 ! Run the program:
 !        ./cpu_stress_test
-! You can install the latest gfortran release by installing the latest GCC update. (GCC13 is the latest stable release as of January 2025)
-
+! You can install the latest gfortran release by updating to the latest GCC release. (GCC13 is the latest stable release as of January 2025)
+! GNU Fortran is also accessible if you install GNU Octave, if you are using Microsoft Windows
 
 PROGRAM CPUSressTest
   USE omp_lib
