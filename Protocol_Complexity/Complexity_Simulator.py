@@ -25,7 +25,7 @@ def circuit_complexity_simulation(truth_table):
 
 def communication_complexity_equality(x, y):
     """
-    Simulate communication complexity of equality function (naive model).
+    Simulate the communication complexity of the equality function (naive model).
     """
     print("\n=== Communication Complexity ===")
     if x == y:
