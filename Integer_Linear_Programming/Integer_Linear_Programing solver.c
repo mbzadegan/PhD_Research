@@ -3,7 +3,7 @@
   The Algorithm: Branch and Bound 
 
   We will solve a maximization problem. The algorithm explores a tree of possible variable assignments (0 or 1).
-       Branch: We define the value of one variable at a time (recurse).
+       Branch: We define the value of a single variable at a time (recursively).
        Bound (Pruning): At each step, we calculate the "best possible" outcome for the remaining variables. If that potential outcome is worse than a solution we've already found, we stop (prune) that branch.
        Feasibility: We check if the current constraints are violated.
 
