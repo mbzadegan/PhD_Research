@@ -8,7 +8,7 @@ G = graphs.RandomGNP(n, p)
 
 start = time.time()
 
-# Solve maximum clique
+# Solve maximum clique by SageMath
 clique = G.clique_maximum()
 
 end = time.time()
