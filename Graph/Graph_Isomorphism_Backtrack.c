@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define MAXN 20   // increase if needed (exponential!)
+#define MAXN 20   // increase it if needed (exponential!)
 
 int n;
 int G1[MAXN][MAXN], G2[MAXN][MAXN];
