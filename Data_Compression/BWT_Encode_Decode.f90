@@ -41,7 +41,7 @@ contains
         call sort_rotations(indices, input_str, n)
 
         ! Construct the Last Column (L)
-        ! The last char of a rotation starting at i is at index (i-2) mod n
+        ! The last char of a rotation starting at i is at index (i-2) mod n,
         do i = 1, n
             output_str(i:i) = get_char_at_rotation_end(indices(i), input_str, n)
             
