@@ -1,6 +1,6 @@
 ! ------------------------------------------------------------------
 ! Burrows-Wheeler Transform (BWT) Implementation
-! Based on concepts in "Introduction to Data Compression" by K. Sayood
+! Based on concepts in "Introduction to Data Compression" book by K. Sayood
 !
 ! This module demonstrates:
 ! 1. Permutation of text via Block Sorting (Rotations).
