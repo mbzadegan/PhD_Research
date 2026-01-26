@@ -8,7 +8,7 @@ int naive_communication_protocol(const char *alice, const char *bob, int n, int 
     return strcmp(alice, bob) == 0;
 }
 
-// Randomized protocol: Alice sends a simple checksum (e.g., XOR of bits)
+// Randomized protocol: Alice sends a simple checksum (e.g. XOR of bits)
 int randomized_protocol(const char *alice, const char *bob, int n, int *bits_sent) {
     char alice_parity = 0, bob_parity = 0;
     for (int i = 0; i < n; i++) {
