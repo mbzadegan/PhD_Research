@@ -127,7 +127,7 @@ void johnson(struct Graph* graph) {
         adj[u][v] = w + h[u] - h[v];
     }
 
-    // Step 4: Run Dijkstra from each vertex
+    // Step 4: Run Dijkstra from each vertex:
     printf("All-Pairs Shortest Paths (Johnson's Algorithm):\n");
     for (int u = 0; u < V; u++) {
         int* dist = (int*)malloc(V * sizeof(int));
