@@ -54,7 +54,7 @@ def main():
     proof_steps = [
         "Assume A is true → A ∨ ¬A",
         "Assume A is false → ¬A → A ∨ ¬A",
-        "Therefore, A ∨ ¬A is always true"
+        "Therefore, A ∨ ¬A is always true."
     ]
     proof_complexity_simulation(formula, proof_steps)
 
