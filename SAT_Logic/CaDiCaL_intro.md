@@ -127,7 +127,7 @@ v 1 2 -3 0
 - **Proof logging**: `--proof=proof.txt` (for UNSAT certificates)  
 - **Timeout**: `--time=seconds`  
 
-These options allow researchers to perform experiments and verify results formally.
+These options enable researchers to conduct experiments and formally verify results.
 
 ---
 
