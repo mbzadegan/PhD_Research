@@ -3,16 +3,13 @@ This is an ideal candidate for CUDA because checking millions of permutations is
 The Problem: Traveling Salesman (TSP)Given $N$ cities and the distances between them, what is the shortest possible route that visits each city exactly once and returns to the origin?
 The Strategy: We will generate permutations of the path. 
 
-  Since there are (N-1)! Unique paths (fixing the start city), the number of paths explodes quickly.
-  CPU: calculating 12 cities (11! \approx 40 million paths) takes seconds, and 15 cities (14! \approx 87$ billion) take hours or days.
+Since there are (N-1)! Unique paths (fixing the start city), the number of paths explodes quickly.
+CPU: calculating 12 cities (11! \approx 40 million paths) takes seconds, and 15 cities (14! \approx 87$ billion) take hours or days.
   
-  GPU (CUDA): We can check millions of paths simultaneously.
-  */
-
-
-
-// Compile this code after installing the CUDA Toolkit.
-// nvcc NP-Hard-CUDA.c -o NP-Hard-CUDA -O3
+GPU (CUDA): We can check millions of paths simultaneously.
+  
+Compile this code after installing the CUDA Toolkit.
+nvcc NP-Hard-CUDA.c -o NP-Hard-CUDA -O3 */
 
 
 
