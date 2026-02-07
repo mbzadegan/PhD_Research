@@ -3,9 +3,7 @@ The winners are truly baffling, as the 1990s “Best Small Program.”
 C Programming: A Modern Approach, By K.N.KING
 This program, written by Doron Osovlanski and Baruch Nissenbaum, prints all solutions to the Eight Queens problem (the problem of placing eight queens on a
 chessboard in such a way that no queen attacks any other queen). In fact, it works for any number of queens between four and 99. For more winning programs, visit
-www.ioccc.org, the contest’s website.
-
-*/
+www.ioccc.org, the contest’s website.*/
 
 #include <stdio.h>
 int v,i,j,k,l,s,a[99];
