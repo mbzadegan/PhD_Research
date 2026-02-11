@@ -21,6 +21,7 @@
 #define N_CONSTRAINTS 2 // Number of constraints
 
 // Problem Data (Global for simplicity in this example)
+
 // Objective function coefficients (Maximize)
 int c[N_VARS] = {8, 11, 6, 4};
 
