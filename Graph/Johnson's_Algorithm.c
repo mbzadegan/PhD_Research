@@ -44,7 +44,7 @@ int bellmanFord(struct Graph* graph, int src, int* dist) {
         }
     }
 
-    // Check for negative cycles
+    // Checking for negative cycles
     for (int j = 0; j < E; j++) {
         int u = graph->edges[j].src;
         int v = graph->edges[j].dest;
