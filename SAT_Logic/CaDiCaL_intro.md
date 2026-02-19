@@ -258,7 +258,7 @@ p cnf 4 4
 1 -4 0
 ```
 
-### Running in command line
+### Running in the command line
 
 ```bash
 cadical example.cnf
