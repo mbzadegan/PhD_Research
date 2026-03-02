@@ -51,7 +51,7 @@ int calculate_lhs(int constraint_idx, int level) {
     return sum;
 }
 
-// Check if the current partial assignment is valid regarding constraints
+// Check if the current partial assignment is valid regarding constraints.
 // Returns true if potentially valid, false if already violated
 bool is_feasible(int level) {
     for (int i = 0; i < N_CONSTRAINTS; i++) {
