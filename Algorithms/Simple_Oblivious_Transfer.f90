@@ -42,7 +42,7 @@ program oblivious_transfer
 
 contains
 
-    ! Simple XOR encryption function for character strings
+    ! Simple XOR encryption function for character strings.
     function xor_encrypt(msg, key) result(enc_msg)
         character(len=*), intent(in) :: msg
         integer, intent(in) :: key
