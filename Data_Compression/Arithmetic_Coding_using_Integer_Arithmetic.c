@@ -1,6 +1,6 @@
 /*
  * Arithmetic Coding Implementation (Integer Arithmetic with Scaling)
- * Based on "Introduction to Data Compression" by Khalid Sayood
+ * Based on "Introduction to Data Compression" book by Khalid Sayood
  * Chapter 4, Section 4.4.3 "Integer Implementation"
  *
  * This program implements:
