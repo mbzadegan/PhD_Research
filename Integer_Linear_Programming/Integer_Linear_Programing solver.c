@@ -8,8 +8,10 @@
        Feasibility: We check if the current constraints are violated.
 
    C Code: 0-1 ILP Solver, This code solves a problem with:
+   
    $N$ Variables (binary).
    $M$ Constraints ($Ax \le b$).
+   
    An objective function to maximize ($c^T x$). */
 
 
