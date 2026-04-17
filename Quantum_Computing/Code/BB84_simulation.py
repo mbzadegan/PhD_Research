@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-bb84_simulation.py
+‌‌BB84_simulation.py
 
 An educational BB84 quantum key distribution simulation with:
 - explicit qubit state vectors
@@ -17,10 +17,10 @@ Requires:
     numpy
 
 Run:
-    python bb84_simulation.py
+    python BB84_simulation.py
 
 Optional:
-    python bb84_simulation.py --n 4096 --eve 0.25 --noise 0.01 --sample 0.2
+    python BB84_simulation.py --n 4096 --eve 0.25 --noise 0.01 --sample 0.2
 """
 
 from __future__ import annotations
