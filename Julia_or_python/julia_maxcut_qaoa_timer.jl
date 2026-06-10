@@ -1,31 +1,28 @@
 using Random
-using Graphs
 using Optim
-using LinearAlgebra
 using Printf
 
-# -----------------------------
-# MaxCut graph
-# -----------------------------
 const N_QUBITS = 14
-const EDGE_PROBABILITY = 0.35
 const QAOA_DEPTH = 3
 const MAX_ITERATIONS = 80
 const SEED = 1234
 
-Random.seed!(SEED)
+const edges_list = [
+    (1, 2), (1, 5), (2, 3), (2, 7), (3, 4),
+    (4, 8), (5, 6), (6, 7), (7, 8), (8, 9),
+    (9, 10), (10, 11), (11, 12), (12, 13), (13, 14),
+    (3, 10), (4, 12), (6, 14), (2, 11), (5, 13),
+    (1, 9), (7, 12), (8, 14), (4, 6), (10, 14)
+]
 
-graph = erdos_renyi(N_QUBITS, EDGE_PROBABILITY, seed=SEED)
-edges_list = [(src(e), dst(e)) for e in edges(graph)]
+Random.seed!(SEED)
 
 println("Number of qubits: ", N_QUBITS)
 println("Number of edges: ", length(edges_list))
 println("QAOA depth p: ", QAOA_DEPTH)
 
-# -----------------------------
-# MaxCut objective
-# -----------------------------
-function maxcut_value(index::Int, edges_list)
+
+function maxcut_value(index::Int)
     value = 0
 
     for (i, j) in edges_list
@@ -40,7 +37,8 @@ function maxcut_value(index::Int, edges_list)
     return value
 end
 
-function apply_rx!(state, qubit, beta, n)
+
+function apply_rx!(state, qubit, beta)
     c = cos(beta)
     s = -im * sin(beta)
 
@@ -62,6 +60,7 @@ function apply_rx!(state, qubit, beta, n)
     end
 end
 
+
 function expected_cut_value(params)
     gammas = params[1:QAOA_DEPTH]
     betas = params[QAOA_DEPTH+1:end]
@@ -73,15 +72,13 @@ function expected_cut_value(params)
         gamma = gammas[layer]
         beta = betas[layer]
 
-        # Cost Hamiltonian phase separator
         for index in 0:(dim - 1)
-            cut = maxcut_value(index, edges_list)
+            cut = maxcut_value(index)
             state[index + 1] *= exp(-im * gamma * cut)
         end
 
-        # Mixer Hamiltonian
         for q in 1:N_QUBITS
-            apply_rx!(state, q, beta, N_QUBITS)
+            apply_rx!(state, q, beta)
         end
     end
 
@@ -89,16 +86,13 @@ function expected_cut_value(params)
 
     for index in 0:(dim - 1)
         probability = abs2(state[index + 1])
-        expectation += probability * maxcut_value(index, edges_list)
+        expectation += probability * maxcut_value(index)
     end
 
-    # Optim minimizes, so return negative value
     return -expectation
 end
 
-# -----------------------------
-# Run benchmark
-# -----------------------------
+
 initial_params = rand(2 * QAOA_DEPTH) .* π
 
 start_time = time()
@@ -112,14 +106,10 @@ result = optimize(
 
 end_time = time()
 
-best_expected_value = -Optim.minimum(result)
-best_parameters = Optim.minimizer(result)
-total_time = end_time - start_time
-
 println()
 println("========== RESULTS ==========")
-@printf("Best expected MaxCut value: %.6f\n", best_expected_value)
-println("Best parameters: ", best_parameters)
+@printf("Best expected MaxCut value: %.6f\n", -Optim.minimum(result))
+println("Best parameters: ", Optim.minimizer(result))
 println("Optimizer converged: ", Optim.converged(result))
-@printf("Total processing time: %.6f seconds\n", total_time)
+@printf("Total processing time: %.6f seconds\n", end_time - start_time)
 println("=============================")
