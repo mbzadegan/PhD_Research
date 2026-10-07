@@ -16,7 +16,7 @@ module majority3 (
     input wire c,
     output wire y
 );
-    // Majority outputs one if at least two inputs are 1
+    // Majority outputs one if at least two inputs are one
     assign y = (a & b) | (a & c) | (b & c);
 endmodule
 
