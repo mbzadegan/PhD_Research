@@ -17,8 +17,8 @@ const edges_list = [
 
 Random.seed!(SEED)
 
-println("Number of qubits: ", N_QUBITS)
-println("Number of edges: ", length(edges_list))
+println("Number of Qubits: ", N_QUBITS)
+println("Number of Edges: ", length(edges_list))
 println("QAOA depth p: ", QAOA_DEPTH)
 
 
