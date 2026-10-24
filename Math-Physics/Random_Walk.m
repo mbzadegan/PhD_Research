@@ -18,7 +18,9 @@ for r=1:number_of_walkers;
  end;
 
 end;
+
 % Divide by number of walkers
+
 x2ave= x2ave/number_of_walkers;
 plot(step_number_array, x2ave, 'g');
 title('Random walk with random step length');
